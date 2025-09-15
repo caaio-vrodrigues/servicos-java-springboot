@@ -40,9 +40,9 @@ public class PersonController {
 	
 	@PutMapping
 	public ResponseEntity<Person> editPerson(
-			Long id,
-			@RequestBody Person personBody)
-	{
+		Long id,
+		@RequestBody Person personBody
+	){
 		return ResponseEntity.ok(service.updatePerson(id, personBody));
 	}
 	
