@@ -12,7 +12,7 @@
 	<artifactId>service04</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>service04</name>
-	<description>Tratamento de exceções.</description>
+	<description>Tratamento de exceções personalizadas.</description>
 	<url/>
 	<licenses>
 		<license/>

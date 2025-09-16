@@ -30,4 +30,7 @@ public class Product {
 	
 	@Column(name="price")
 	private BigDecimal price;
+	
+	@Column(name="discount")
+	private BigDecimal discount;
 }
