@@ -38,6 +38,6 @@ public class ProductService {
 		BigDecimal discountTotal = product.getPrice().multiply(discountPercentage);
 		if(discountTotal.doubleValue() >= 10.0) throw new InvalidDiscountException("Desconto acima do limite para o id: "+id);
 		product.setDiscount(discountTotal);
-		return product;
+		return repo.saveAndFlush(product);
 	}
 }
