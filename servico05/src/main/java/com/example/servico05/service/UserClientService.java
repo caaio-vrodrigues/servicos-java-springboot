@@ -2,6 +2,7 @@ package com.example.servico05.service;
 
 import java.util.List;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.servico05.infrastructure.entity.UserClient;
@@ -14,8 +15,10 @@ import lombok.RequiredArgsConstructor;
 public class UserClientService {
 
 	private final UserClientRepository repo;
+	private final BCryptPasswordEncoder passwordEncoder; 
 	
 	public UserClient createUser(UserClient user) {
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		return repo.saveAndFlush(user);
 	}
 	
