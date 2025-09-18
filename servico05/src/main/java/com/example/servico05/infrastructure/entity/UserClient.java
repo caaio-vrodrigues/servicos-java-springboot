@@ -1,7 +1,5 @@
 package com.example.servico05.infrastructure.entity;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,20 +12,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="product_test")
+@Table(name="user_client")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class Product {
-	
+public class UserClient {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name="name")
-	private String name;
+	@Column
+	private String username;
 	
-	@Column(name="price")
-	private BigDecimal price;
+	@Column
+	private String password;
 }
