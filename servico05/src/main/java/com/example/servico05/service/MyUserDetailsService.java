@@ -17,9 +17,13 @@ public class MyUserDetailsService implements UserDetailsService {
 	private UserClientRepository repo;
 
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) 
+		throws UsernameNotFoundException 
+	{
 		UserClient user = repo.findByUsername(username);
-		if(user == null) throw new UsernameNotFoundException("Usuário não encontrado");
+		if(user == null) 
+		throw new UsernameNotFoundException("Usuário não encontrado");
+		
 		return new UserClientPrincipals(user);
 	}
 }

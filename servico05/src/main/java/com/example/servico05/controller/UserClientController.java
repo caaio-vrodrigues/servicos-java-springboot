@@ -36,5 +36,11 @@ public class UserClientController {
 	@GetMapping
 	public ResponseEntity<List<UserClient>> listUsers(HttpServletRequest request) {
 		return ResponseEntity.ok(service.searchAllUsers());
+	} 
+	
+	@PostMapping("/login")
+	public String login(@RequestBody UserClient user) {
+		System.out.println(user);
+		return "Succes";
 	}
 }
